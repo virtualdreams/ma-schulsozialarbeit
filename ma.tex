@@ -1,0 +1,82 @@
+%%% Setup
+\include{setup}
+
+\hypersetup{
+	pdftitle    = {Schüler haben\grq s schwer, Lehrer aber auch. Außerunterrichtliche Beratungs- und Unterstützungsbedarfe von SchülerInnen im medizinischen und sozialen Bereich und daraus abgeleitete sozialpädagogische Angebote},
+	pdfsubject  = {Ermittlung möglicher Problemlagen von Schülern am DRK-Bildungswerk Sachsen; zudem die Sicht der Lehrer auf diese Problematik und daraus schlussfolgernd die Konzeption möglicher Beratungs- und Unterstützungsangebote},
+	pdfauthor   = {Doreen Stichel, Daniela Wobst},
+	pdfkeywords = {Schulsozialarbeit, Berufsbildende Schulen, Sachsen, DRK-Bildungswerk Sachsen},
+	pdfcreator  = {pdflatex},
+	pdfproducer = {LaTeX with hyperref}
+}
+
+%%% Hier beginnt das Dokument
+\begin{document}
+
+\KOMAoption{headsepline}{false} 
+\KOMAoption{footsepline}{false}
+
+%%% römische nummerierung
+\pagenumbering{roman}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+%%% Footer und Header clearen
+\clearscrheadfoot
+
+%%% Titelseite
+\include{title}
+
+\include{Autorinnen}
+
+\include{danksagung}
+
+\include{bilder}
+
+%%%-Hinweis
+\include{hinweis}
+
+%%% Inhaltsverzeichnis
+\include{toc}
+
+\include{Einteilung}
+
+\KOMAoption{headsepline}{true} 
+\KOMAoption{footsepline}{true} 
+
+%%% Seitenzahl ab hier immer rechts
+\ofoot{\pagemark}
+\ihead{Masterarbeit}
+\ohead{\headmark}
+\pagestyle{scrheadings}
+
+%%% arabische Nummerierung
+\pagenumbering{arabic}
+
+%%% Inhalte
+\include{kapitel1}
+\include{kapitel2}
+\include{kapitel3}
+\include{kapitel4}
+\include{kapitel5}
+\include{kapitel6}
+\include{kapitel7}
+\include{kapitel8}
+\include{kapitel9}
+\include{kapitel10}
+
+%%% Ab hier kommen die Anhänge
+\appendix
+
+%%% Quellenverzeichnis
+\nocite{*}
+\printbibliography
+
+%%%Anhang
+\include{anhang}
+
+%%% Selbstständigkeitserklärung
+\include{selbst}
+
+\end{document}

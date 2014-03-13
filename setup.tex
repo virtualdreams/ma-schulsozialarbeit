@@ -1,0 +1,109 @@
+%%% Dokumentenklasse Artikel
+%%% 12pt
+%%% A4
+%%% Titelseite
+%%% Nummerierung ohne endende Punkte zB. 1. ; 1.1.
+%%% einseitig
+\documentclass[fontsize=12pt,paper=a4,titlepage,numbers=noenddot,twoside=false,bibliography=totocnumbered,toc=listof,hidelinks,listof=totocnumbered]{scrartcl}
+
+%%% Schriftart, Kodierung und Sprache
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+%%% Schriftart
+%\usepackage{ae}
+\usepackage{times}
+
+%%% Space :)
+\usepackage{setspace}
+
+%%% Multirow in Tabellen (miktex only?)
+\usepackage{multirow}
+
+%%% Grapfikpaket
+\usepackage{graphicx}
+
+%%% Randeinstellungen
+\usepackage[left=30mm,right=30mm,bottom=25mm,top=25mm]{geometry}
+
+%%% Blindtext
+\usepackage{lipsum}
+
+%%% Footer und Header
+%% headsepline - Headerlinie
+%% footsepline - Fusslinie
+%% mehr unter http://get-software.net/macros/latex/contrib/koma-script/doc/scrguide.pdf
+\usepackage[headsepline,footsepline,automark]{scrlayer-scrpage}
+
+%%% Formelkram falls gebraucht
+%\usepackage{amsmath}
+%\usepackage{amsfonts}
+%\usepackage{amssymb}
+
+%%% Listen
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{enumitem}
+
+%%% Listeneinträge sollen alle mit Bullets anfangen
+%\renewcommand{\labelitemi}{$\bullet$}
+%\renewcommand{\labelitemii}{$\bullet$}
+%\renewcommand{\labelitemiii}{$\bullet$}
+%\renewcommand{\labelitemiv}{$\bullet$}
+
+%%% Für Programm/Code Listings
+\renewcommand{\lstlistingname}{Programm}
+
+%%% Gepunktete Linie im Inhaltsverzeichnis entfernen
+\usepackage[titles]{tocloft}
+\renewcommand{\cftdot}{}
+
+%%% (Kleinere) Randnotizen
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\footnotesize}
+
+%%% Farbenkram
+%\usepackage{color}
+
+%%% Gedichte
+\usepackage{verse}
+
+%%% pdf zusätzlich einbinden
+\usepackage{pdfpages}
+
+%%% PDF Hyperlinks
+\usepackage[ngerman,plainpages=false,pdfpagelabels]{hyperref}
+
+%%% biblatex (Quellenverz)
+%%% mehr unter http://biblatex.dominik-wassenhoven.de/download/DTK-2_2008-biblatex-Teil1.pdf
+%%% benutze biber.exe anstelle von bibtex.exe (miktex)
+\usepackage[backend=biber,bibencoding=utf8,style=authortitle-icomp,bibstyle=numeric,pagetracker=false,isbn=false]{biblatex}
+\usepackage[babel,german=quotes]{csquotes}
+\setlength{\bibitemsep}{1em}
+
+%%% Das Quellenverz. z.B. mit JabRef erstellt. 
+\bibliography{bibliography}
+\addbibresource{bibliography.bib}
+
+\DeclareNameAlias{sortname}{last-first}
+\DeclareNameAlias{default}{last-first}
+
+\AtBeginBibliography{%
+  \renewcommand*{\multinamedelim}{\addsemicolon\space}
+  \renewcommand*{\finalnamedelim}{\addsemicolon\space}
+}
+
+%%% Zeilenabstand 1,5
+\onehalfspacing
+
+%%% Extra Kommandos
+%% \punkte -> ...
+\newcommand*{\punkte}{\dots\unkern}
+
+%\renewcommand\listoffigures{%
+    %\section{\listfigurename}% Used to be \section*{\listfigurename}
+      %\@mkboth{\MakeUppercase\listfigurename}%
+              %{\MakeUppercase\listfigurename}%
+    %\@starttoc{lof}%
+    %}
